@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { apiFetch } from '../api';
 
 const Hero = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
@@ -18,7 +18,7 @@ const Hero = () => {
     try {
       const response = await apiFetch('/api/auth/login', {
         method: 'POST',
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await response.json();
@@ -43,7 +43,7 @@ const Hero = () => {
         
         <div>
           <h1 style={{ fontSize: '34px', color: '#1e293b', lineHeight: '1.3', marginBottom: '20px', fontWeight: '700' }}>
-            Welcome to PAK SMM PANELS | Cheapest SMM Panel | Pakistan No.1 SMMPANEL
+            Welcome to PAK SMM PANELS | Cheapest SMM Panel
           </h1>
           <p style={{ fontSize: '16px', fontWeight: '600', color: '#1e293b' }}>
             🚀 Boost Your Online Presence | Instant Delivery
@@ -57,12 +57,12 @@ const Hero = () => {
               {errorMsg && <div style={{ background: '#fee2e2', color: '#b91c1c', padding: '10px', borderRadius: '6px', marginBottom: '15px', fontSize: '13px' }}>{errorMsg}</div>}
 
               <div style={{ marginBottom: '20px' }}>
-                <label style={{ display: 'block', fontSize: '14px', fontWeight: '700', color: '#1e293b', marginBottom: '8px' }}>Username</label>
+                <label style={{ display: 'block', fontSize: '14px', fontWeight: '700', color: '#1e293b', marginBottom: '8px' }}>Email</label>
                 <input 
-                  type="text" 
-                  placeholder="Username" 
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  type="email" 
+                  placeholder="Enter your email" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   style={{ width: '100%', padding: '12px', border: '1px solid #e2e8f0', borderRadius: '8px', background: '#f8fafc', outline: 'none' }} 
                   required
                 />

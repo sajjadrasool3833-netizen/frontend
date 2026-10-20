@@ -1,5 +1,4 @@
-// ⚠️ YAHAN APNA VERCEL URL DAALEIN
-const API_URL = 'https://backendtest-weld.vercel.app'; 
+const API_URL = 'https://backendtest-735h.vercel.app'; // ⚠️ APNA URL YAHAN DAALEIN
 
 export const apiFetch = async (endpoint, options = {}) => {
   const response = await fetch(`${API_URL}${endpoint}`, {
